@@ -82,13 +82,13 @@ cell.encoding = cell.encoding || {};
 
 // image code file encode / decode
 (function(_e_) {
-    function imgCode($) {
+    function imgCode() {
         this.autoDecode = function(callback) {
-            $('img').each(function() {
-                var type = $(this).data('type');
+            Array.from(document.getElementsByTagName('img')).forEach((img) => {
+                var type = img.dataset.type;
                 if (type && type.toLowerCase() === 'script') {
-                    this.onload = function() {
-                        var data = fileLoader(this);
+                    img.onload = function() {
+                        var data = fileLoader(img);
                         if (callback && callback instanceof Function) {
                             callback(data);
                         }
@@ -209,5 +209,5 @@ cell.encoding = cell.encoding || {};
     }
     
     _e_.imgCode = {};
-    imgCode.call(_e_.imgCode, jQuery || Zepto);
+    imgCode.call(_e_.imgCode);
 })(cell.encoding);
