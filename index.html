@@ -4,13 +4,24 @@
     <title>durian</title>
   </head>
   <body>
-    <canvas id="floppy" width="320" height="320" style="border:1px solid #d3d3d3;">
-      Your browser does not support the HTML5 canvas tag.</canvas>
-    <p>
-      <strong>Note:</strong>
-      The canvas tag is not supported in Internet Explorer 8 and earlier versions.
-    </p>
-    <script type="text/javascript" src="libs/file-decode.js"></script>
+    <!--canvas id="floppy" width="280" height="280" style="border:1px solid #d3d3d3; background-color:#fff;">
+      Your browser does not support the HTML5 canvas tag.</canvas-->
+    <img id="floppy" width="280" height="280" style="border:1px solid #d3d3d3; background-color:#fff;" />
+    <textarea id="editor" name="editor" style="width:276px; height: 280px; border:1px solid #d3d3d3;">
+'这是注释
+DIM A$(10)
+FOR I=1 TO 10
+    INPUT A$(I)
+NEXT I
+B$=A$(1)
+FOR I=2 TO 10
+    IF B$<A$(I) THEN B$=A$(I)
+NEXT I
+PRINT B$
+END</textarea>
+    <div id="toolbar" style="display:inline;"></div> <div id="downloadlink" style="display:inline;"></div>
+    <script type="text/javascript" src="libs/encoders.js"></script>
+    <script type="text/javascript" src="libs/utils.js"></script>
     <script type="text/javascript" src="scripts/sc-image.js"></script>
   </body>
 </html>
